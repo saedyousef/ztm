@@ -1,30 +1,30 @@
 <?php
-// Given an array, rotate the array to the right by k steps, where k is non-negative.
-// Input: [1,2,3,4,5,6,7] and k = 3
-// Output: [5,6,7,1,2,3,4]
-// Explanation:
-// rotate 1 steps to the right: [7,1,2,3,4,5,6]
-// rotate 2 steps to the right: [6,7,1,2,3,4,5]
-// rotate 3 steps to the right: [5,6,7,1,2,3,4]
-// Source : https://leetcode.com/problems/rotate-array/description/
 
 class Rotation{
-    public function rotate(&$array, $steps, $len)
+
+    /**
+     * @param Array[] $nums
+     * @param Integer $k
+     * @param Integer $n
+     * @return Integer[]
+     * @source https://leetcode.com/problems/rotate-array/description/
+     */
+    public function rotate(&$nums, $k, $n)
     {
-        while ($steps < $len) 
+        while ($k < $n) 
         { 
-            $temp = $array[$steps]; 
-            $array[$steps] = $array[$len]; 
-            $array[$len] = $temp; 
-            $steps++; 
-            $len--; 
+            $temp = $nums[$k]; 
+            $nums[$k] = $nums[$n]; 
+            $nums[$n] = $temp; 
+            $k++; 
+            $n--; 
         } 
     }
 
-    function rightRotate(&$array, $d, $n) 
+    function rightRotate(&$nums, $d, $n) 
     { 
-        $this->rotate($array, 0, $n - 1); // reverse the elements
-        $this->rotate($array, $d, $n - 1);
+        $this->rotate($nums, 0, $n - 1); // reverse the elements
+        $this->rotate($nums, $d, $n - 1);
 
         return $array;
     }
@@ -32,5 +32,5 @@ class Rotation{
 // Driver code
 $rotation = new Rotation();
 $array = [1,2,3,4,5,6];
-$len = sizeof($array);
-print_r($rotation->rightRotate($array, 7, $len));
+$n = sizeof($array);
+print_r($rotation->rightRotate($array, 7, $n));

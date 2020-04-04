@@ -10,7 +10,7 @@ class HashTable {
         hash = (hash+ key.charCodeAt(i) * i) % this.data.length;
       }
       return hash;
-    }// O(1) it's very fast
+    }// O(1)
   
     set(key, value)
     {
@@ -22,8 +22,13 @@ class HashTable {
   
       return this.data;
     }// O(1)
-  
+
     get(key)
+    {
+       return this.data[this._hash[key]];
+    }// O(1), lookup in hash tables very fast
+  
+    keys()
     {
       if(!this.data.length)
         return undefined;
@@ -44,21 +49,7 @@ class HashTable {
         }
       }
     } // if there collision exists then O(i * j), otherwise it's would be O(1)
-  
-    keys()
-    {
-      const keysArray = [];
-      for(let i = 0; i< this.data.length; i++)
-      {
-        if(this.data[i])
-        {
-          keysArray.push(this.data[i][0][0]);
-        }
-      }
-  
-      return keysArray;
-    }// O(n) cuz it will loop through the whole talble
-  }
+}
 
   // driver code
   const hashTable = new HashTable(50);

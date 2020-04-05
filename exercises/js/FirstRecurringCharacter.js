@@ -24,21 +24,5 @@ function firstRecurringCharacter(array)
     return undefined;
 }
 
-// Using nested loops to return the recurring character, not the best way
-function firstRecurringCharacter2(array)
-{
-    let map = {};
-
-    for(let i = 0; i < array.length; i++)
-    {
-        if(map[array[i]]) // If the key is already exists, then return the value
-            return array[i];
-
-        map[array[i]] = true;
-    }
-
-    return undefined;
-}
-
 // Driver code
 firstRecurringCharacter([2,5,1,2,3,5,1,2,4]);

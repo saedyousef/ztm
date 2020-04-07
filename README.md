@@ -1,2 +1,2 @@
 # ztm (Zero to Mastery)
- **`Data structrue`  &amp; `Algorithms` (Manually built)**
+ **`Data structrues`  &amp; `Algorithms` (Manually built)**

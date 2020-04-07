@@ -97,6 +97,28 @@ class LinkedList{
   
       return array;
     }
+
+    reverse()
+    {
+      if(!this.head.next)
+        return this;
+
+      let current = this.head;
+      let next = current.next;
+      this.head = this.tail;
+
+      while(next)
+      {
+        const temp = next.next;
+        next.next = current;
+        current = next;
+        next = temp;
+      }
+      this.head.next = null;
+      this.head = current;
+
+      return this;
+    }
   }
   
   // Driver code

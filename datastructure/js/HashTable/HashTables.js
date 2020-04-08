@@ -25,7 +25,7 @@ class HashTable {
 
     get(key)
     {
-       return this.data[this._hash[key]];
+       return this.data[this._hash(key)];
     }// O(1), lookup in hash tables very fast
   
     keys()
@@ -40,14 +40,15 @@ class HashTable {
         {
           if(this.data[i].length > 1)
           {
-            for(let j = 0; j < this.data[i]; j++)
+            for(let j = 0; j < this.data[i].length; j++)
             {
               keysArray.push(this.data[i][j][0]);
             }
           }else
-            keysArray.push(this.data[i][0]);
+            keysArray.push(this.data[i][0][0]);
         }
       }
+      return keysArray;
     } // if there collision exists then O(i * j), otherwise it's would be O(1)
 }
 

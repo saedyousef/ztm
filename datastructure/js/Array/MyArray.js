@@ -10,6 +10,7 @@ class MyArray {
     {
         this.data[this.length] = item;
         this.length++;
+        return this;
     }
 
     pop()

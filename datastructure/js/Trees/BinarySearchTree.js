@@ -42,7 +42,6 @@ class Node {
     }
     lookup(value){
       //Code here
-      // TODO imw
     }
     // remove
   }

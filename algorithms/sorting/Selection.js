@@ -20,7 +20,7 @@ class Selection
         }
         return array;
     }
-}
+} // Space Complexity O(1), time Complexity O(n^2)
 
 // Driver code
 const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];

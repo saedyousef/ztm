@@ -1,4 +1,4 @@
-class BubbleSort
+class Bubble
 {
     sort(array)
     {
@@ -19,5 +19,5 @@ class BubbleSort
 
 // Driver code
 const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
-bubbleSort = new BubbleSort();
+bubbleSort = new Bubble();
 bubbleSort.sort(numbers);

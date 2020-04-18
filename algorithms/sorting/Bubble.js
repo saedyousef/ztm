@@ -20,4 +20,4 @@ class Bubble
 // Driver code
 const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
 bubbleSort = new Bubble();
-bubbleSort.sort(numbers);
+console.log(bubbleSort.sort(numbers));

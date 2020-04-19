@@ -127,7 +127,7 @@ class BinarySearchTree {
             }
         }
     }
-
+    // Standard BFS
     breadthFirstSearch()
     {
         let currentNode = this.root;
@@ -147,9 +147,10 @@ class BinarySearchTree {
         return list;
     }
 
+    // BFS(Breadth First Search) by recursion
     breadthFirstSearchR(queue, list)
     {
-        if(!queue)
+        if(!queue.length)
             return list;
         
         let currentNode = queue.shift();
@@ -161,6 +162,58 @@ class BinarySearchTree {
         
         return this.breadthFirstSearchR(queue, list);
     }
+
+    // DFS Depth First Search
+
+    // In order 
+    DFSInOrder()
+    {
+        return this.traverseInOrder(this.root, []);
+    }
+    // pre order
+    DFSPreOrder()
+    {
+        return this.traversePreOrder(this.root, []);
+    }
+    // post order
+    DFSPostOrder()
+    {
+        return this.traversePostOrder(this.root, []);
+    }
+
+    traverseInOrder(node, list)
+    {
+        if(node.left)
+            this.traverseInOrder(node.left, list);
+        list.push(node.value);
+        if(node.right)
+            this.traverseInOrder(node.right, list);
+        
+        return list;
+    }
+
+    traversePreOrder(node, list)
+    {
+        list.push(node.value)
+        if(node.left)
+            this.traversePreOrder(node.left, list);
+        if(node.right)
+            this.traversePreOrder(node.right, list);
+
+        return list;
+    }
+
+    traversePostOrder(node, list)
+    {
+        if(node.left)
+            this.traversePostOrder(node.left, list);
+        if(node.right)
+            this.traversePostOrder(node.right, list);
+        list.push(node.value);
+
+        return list;
+    }
+
 }
 
 const tree = new BinarySearchTree();
@@ -171,8 +224,15 @@ tree.insert(20);
 tree.insert(170);
 tree.insert(15);
 tree.insert(1);
-tree.breadthFirstSearch();
-tree.breadthFirstSearchR([tree.root], []);
+
+// Searching functions calls 
+console.log("BFS: " + tree.breadthFirstSearch()); // BFS: [9,4,20,1,6,15,170]
+console.log("BFS R: " + tree.breadthFirstSearchR([tree.root], [])); // BFS R: [9,4,20,1,6,15,170]
+console.log("DFS InO: " + tree.DFSInOrder()); // DFS InO: [1,4,6,9,15,20,170]
+console.log("DFS PreO: " + tree.DFSPreOrder()); // DFS PreO: [9,4,1,6,20,15,170]
+console.log("BFS PostO: " + tree.DFSPostOrder()); // BFS PostO: [1,6,4,15,170,20,9]
+// End of searching functions calls
+
 JSON.stringify(traverse(tree.root));
 
 //     9

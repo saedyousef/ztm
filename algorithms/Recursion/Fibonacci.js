@@ -1,7 +1,7 @@
 function fibonacciIterative(number)
 {
     let array = [0, 1];
-    for(let i = 2; i < 2; i++)
+    for(let i = 2; i < number + 1; i++)
     {
         array.push(array[i - 2] + array[i - 1]);
     }

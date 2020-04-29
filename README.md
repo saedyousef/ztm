@@ -2,4 +2,4 @@
  **`Data structrues`  &amp; `Algorithms` (Manually built)**
  ## Roadmap
  ![Image of Roadmap]
- (roadmap.pdf)
+ (roadmap.png)
